@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Delta Executor — Official Download</title>
+
+<style>
+:root{
+  --bg:#0b0e13;--panel:#121826;--panel-2:#0f1420;
+  --accent:#4fc3ff;--accent-2:#7c5cff;
+  --text:#e8ecf1;--muted:#9aa4b2;
+  --danger:#ff4d4d;--ok:#3ddc84;--border:#1f2a44;
+  --shadow:0 20px 40px rgba(0,0,0,.45);--radius:16px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
+  background:
+    radial-gradient(1200px 500px at 10% -10%, #16224a 0%, transparent 40%),
+    radial-gradient(1200px 500px at 90% 0%, #2a174a 0%, transparent 40%),
+    var(--bg);
+  color:var(--text);min-height:100vh;
+  display:flex;justify-content:center;align-items:flex-start;padding:20px;
+}
+.app{width:100%;max-width:980px}
+.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.brand{display:flex;gap:12px;align-items:center}
+.logo{
+  width:44px;height:44px;border-radius:12px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:grid;place-items:center;font-weight:900;color:#001
+}
+.lang{font-size:12px;color:var(--muted);border:1px solid var(--border);
+  padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.03)}
+.hero{
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,0));
+  border:1px solid var(--border);border-radius:var(--radius);
+  padding:22px;box-shadow:var(--shadow);
+  display:grid;grid-template-columns:1.2fr .8fr;gap:18px
+}
+@media(max-width:860px){.hero{grid-template-columns:1fr}}
+.hero h2{margin:0 0 8px;font-size:28px}
+.hero p{margin:0;color:var(--muted)}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.badge{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.03)}
+.badge.ok{color:var(--ok)}
+.badge.sec{color:#ffd166}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stat{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:14px;text-align:center}
+.stat b{display:block;font-size:20px}
+.stat span{font-size:12px;color:var(--muted)}
+.cards{margin-top:18px;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(max-width:700px){.cards{grid-template-columns:1fr}}
+.card{
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,0));
+  border:1px solid var(--border);border-radius:var(--radius);
+  padding:18px;box-shadow:var(--shadow);
+  display:flex;flex-direction:column;gap:12px
+}
+.os{display:flex;gap:10px;align-items:center}
+.icon{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.08);display:grid;place-items:center}
+.cta{margin-top:auto}
+.btn{width:100%;padding:14px;border-radius:12px;border:none;font-weight:700;cursor:pointer}
+.btn.win{background:linear-gradient(135deg,#2d89ef,#1b5fbf);color:#fff}
+.btn.and{background:linear-gradient(135deg,#3ddc84,#1fbf6a);color:#001}
+.fake-ads{margin-top:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(max-width:860px){.fake-ads{grid-template-columns:1fr}}
+.ad{background:var(--panel-2);border:1px dashed var(--border);border-radius:12px;padding:12px;font-size:12px;color:var(--muted)}
+.progress{display:none;margin-top:18px;background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:14px}
+.bar-bg{height:14px;background:#0b1020;border-radius:999px;overflow:hidden}
+.bar{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent-2));transition:width .3s}
+.status{margin-top:8px;font-size:13px;color:var(--muted)}
+.security{
+  margin-top:18px;background:#140000;border:2px solid var(--danger);
+  border-radius:16px;padding:20px;text-align:center
+}
+.security h2{color:var(--danger)}
+.lock{font-size:42px}
+</style>
+</head>
+
+<body>
+<div class="app" id="main">
+  <div class="header">
+    <div class="brand">
+      <div class="logo">Δ</div><h1>DELTA Executor</h1>
+    </div>
+    <div class="lang" id="langLabel">Auto</div>
+  </div>
+
+  <section class="hero">
+    <div>
+      <h2>Fast. Powerful. Undetected.</h2>
+      <p>Official build with automatic updates.</p>
+      <div class="badges">
+        <div class="badge ok">✔ Verified Build</div>
+        <div class="badge sec">🔒 Secure Download</div>
+        <div class="badge">⚡ High Performance</div>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>120K+</b><span>Downloads</span></div>
+      <div class="stat"><b>4.9★</b><span>User Rating</span></div>
+      <div class="stat"><b>v2.6.1</b><span>Latest</span></div>
+    </div>
+  </section>
+
+  <section class="cards" id="buttons">
+    <div class="card">
+      <div class="os"><div class="icon">🪟</div><h3>Windows</h3></div>
+      <p>Windows 10 / 11 (64-bit)</p>
+      <div class="cta"><button class="btn win" onclick="startDownload('Windows')">Download for Windows</button></div>
+    </div>
+    <div class="card">
+      <div class="os"><div class="icon">🤖</div><h3>Android</h3></div>
+      <p>Phones & Tablets</p>
+      <div class="cta"><button class="btn and" onclick="startDownload('Android')">Download for Android</button></div>
+    </div>
+  </section>
+
+  <section class="fake-ads">
+    <div class="ad">Sponsored • Boost FPS instantly</div>
+    <div class="ad">Ad • 100% Safe Installer</div>
+    <div class="ad">Partner • Premium Scripts</div>
+  </section>
+
+  <section class="progress" id="progress">
+    <div class="bar-bg"><div class="bar" id="bar"></div></div>
+    <div class="status" id="status">Initializing...</div>
+  </section>
+</div>
+
+<!-- 🎧 AUDIO (pon tu archivo aquí) -->
+<audio id="alertAudio" preload="auto">
+  <source src="alerta-roblox.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+let percent=0;
+let lang=navigator.language.startsWith("es")?"es":"en";
+document.getElementById("langLabel").innerText="Auto: "+(lang==="es"?"ES":"EN");
+
+const text={
+ es:{
+  init:o=>`Iniciando descarga para ${o}...`,
+  down:p=>`Descargando archivos... ${p}%`,
+  scan:`Roblox Cyber Security está analizando esta página...`,
+  redirect:`Redirigiendo a la página de recuperación de cuenta bloqueada...`,
+  final:`<div class="security"><div class="lock">🔒</div>
+  <h2>Roblox Cyber Security</h2>
+  <p><b>Esta página ha sido bloqueada.</b></p>
+  <p>Violación de las políticas de Roblox.</p>
+  <hr><p>😏 Mejor juega sin trampas.</p><p>🎮 El verdadero skill no se descarga.</p></div>`
+ },
+ en:{
+  init:o=>`Initializing download for ${o}...`,
+  down:p=>`Downloading files... ${p}%`,
+  scan:`Roblox Cyber Security is scanning this page...`,
+  redirect:`Redirecting to blocked account recovery page...`,
+  final:`<div class="security"><div class="lock">🔒</div>
+  <h2>Roblox Cyber Security</h2>
+  <p><b>This page has been blocked.</b></p>
+  <p>Violation of Roblox policies.</p>
+  <hr><p>😏 Play fair.</p><p>🎮 Real skill cannot be downloaded.</p></div>`
+ }
+};
+
+function startDownload(os){
+ document.getElementById("buttons").style.display="none";
+ document.getElementById("progress").style.display="block";
+ const bar=document.getElementById("bar");
+ const status=document.getElementById("status");
+ const audio=document.getElementById("alertAudio");
+
+ // autoriza audio con el click
+ audio.muted=true;
+ audio.play().then(()=>{audio.pause();audio.currentTime=0;audio.muted=false;}).catch(()=>{});
+
+ status.innerText=text[lang].init(os);
+
+ const i=setInterval(()=>{
+  percent+=Math.floor(Math.random()*6)+5;
+  if(percent>=70){
+   clearInterval(i);
+   bar.style.width="70%";
+   status.innerText=text[lang].scan;
+   setTimeout(()=>audio.play(),1500);
+   setTimeout(()=>status.innerText=text[lang].redirect,2600);
+   setTimeout(()=>document.getElementById("main").innerHTML=text[lang].final,5200);
+   return;
+  }
+  bar.style.width=percent+"%";
+  status.innerText=text[lang].down(percent);
+ },450);
+}
+</script>
+</body>
+</html>
